@@ -36,9 +36,9 @@ public class Game {
     public void setStatus(Move.GameStatus status) {
         this.status = status;
     }
-    public boolean playerMove(Player player, int startX, int startY, int endX, int endY) throws Exception {
-        Spot startBox = board.getBox(startX,startY);
-        Spot endBox = board.getBox(startY, endY);
+    public boolean playerMove(Player player, char startX, int startY, char endX, int endY)  {
+        Spot startBox = board.getBox((int)startX-97,startY);
+        Spot endBox = board.getBox((int)endX-97, endY);
         Move move = new Move(player, startBox, endBox);
         //return this.makeMove(move,player);
         return true;

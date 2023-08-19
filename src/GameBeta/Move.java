@@ -16,6 +16,7 @@ public class Move {
         this.player = player;
         this.start = start;
         this.end = end;
+
     }
     public boolean isCastlingMove(){
         return this.castlingMove;
@@ -31,6 +32,6 @@ public class Move {
     STALEMATE,
     RESIGNATION,
     }
-    //public void
+
 }
 

@@ -17,7 +17,4 @@ public class Knight extends Piece {
         int y = Math.abs(start.getY() - end.getY());
         return x * y ==2;
     }
-    public char setPieceSymbol(){
-        return 'N';
-    }
 }

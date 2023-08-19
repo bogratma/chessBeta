@@ -38,8 +38,4 @@ public class King extends Piece {
     public boolean isCastlingMove(Spot start, Spot end){
         return true; //beta
     }
-
-    public char setSymbol(Piece king) {
-       return king.symbol ='k';
-    }
 }

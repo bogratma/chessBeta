@@ -8,7 +8,7 @@ public class Board {
     Spot[][] boxes;
 
     public Board(){
-        boxes[0][0] = new Spot(0,0,new Knight(true));
+        //boxes[0][0] = new Spot(0,0,new Knight(true));
         System.out.println(boxes);
         this.resetBoard();
     }
@@ -26,7 +26,7 @@ public class Board {
             System.out.print(i+1);
             for(int j=0;j<8;j++){
                 if(i<2 || i>5){
-                    boxes[i][j] = new Spot(i,j,new Knight(true));
+                    //boxes[i][j] = new Spot(i,j,new Knight(true));
                  System.out.print(" p ");
                 }
                 else System.out.print(" * ");
