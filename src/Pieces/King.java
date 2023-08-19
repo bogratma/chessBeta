@@ -1,4 +1,10 @@
-public class King extends Piece{
+package Pieces;
+
+import Abstract.Piece;
+import GameBeta.Board;
+import GameBeta.Spot;
+
+public class King extends Piece {
     private boolean castlingDone = false;
 
     public King(boolean white) {
@@ -12,7 +18,7 @@ public class King extends Piece{
     }
 
     @Override
-    public boolean canMove(Board board, Spot start,Spot end){
+    public boolean canMove(Board board, Spot start, Spot end){
         if(end.getPiece().isWhite() == this.isWhite()){
             return false;
         }
@@ -23,13 +29,17 @@ public class King extends Piece{
         }
         return this.isValidCastling(board,start,end);
     }
-    private boolean isValidCastling(Board board,Spot start, Spot end){
+    private boolean isValidCastling(Board board, Spot start, Spot end){
         if(this.isCastlingDone()){
             return false;
         }
         return true; //beta
     }
-    public boolean isCastlingMove(Spot start,Spot end){
+    public boolean isCastlingMove(Spot start, Spot end){
         return true; //beta
+    }
+
+    public char setSymbol(Piece king) {
+       return king.symbol ='k';
     }
 }

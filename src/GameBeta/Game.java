@@ -1,3 +1,10 @@
+package GameBeta;
+
+import Abstract.Player;
+import GameBeta.Board;
+import GameBeta.Move;
+import GameBeta.Spot;
+
 import java.util.List;
 
 public class Game {

@@ -1,5 +1,9 @@
+package GameBeta;
+
+import Abstract.Piece;
+
 public class Spot {
-    private Piece Piece ;
+    private Abstract.Piece Piece ;
     private int x;
     private int y;
 

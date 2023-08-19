@@ -1,3 +1,9 @@
+package GameBeta;
+
+import Abstract.Piece;
+import Abstract.Player;
+import GameBeta.Spot;
+
 public class Move {
     private Player player;
     private Spot start;
@@ -25,5 +31,6 @@ public class Move {
     STALEMATE,
     RESIGNATION,
     }
+    //public void
 }
 

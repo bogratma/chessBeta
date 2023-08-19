@@ -1,3 +1,9 @@
+package Pieces;
+
+import Abstract.Piece;
+import GameBeta.Board;
+import GameBeta.Spot;
+
 public class Knight extends Piece {
     public Knight(boolean white) {
         super(white);
@@ -10,5 +16,8 @@ public class Knight extends Piece {
         int x = Math.abs(start.getX() - end.getX());
         int y = Math.abs(start.getY() - end.getY());
         return x * y ==2;
+    }
+    public char setPieceSymbol(){
+        return 'N';
     }
 }

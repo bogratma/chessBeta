@@ -1,3 +1,5 @@
+package Abstract;
+
 public abstract class Player {
     public boolean whiteSide;
     public boolean humanPlayer;
