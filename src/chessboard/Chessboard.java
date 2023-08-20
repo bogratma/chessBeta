@@ -6,7 +6,7 @@ import javax.xml.transform.Source;
 
 public class Chessboard {
     private Piece[][] board;
-    private Pawn pawn = new Pawn();
+
     private King king = new King();
     private Knight knight = new Knight();
     private Bishop bishop = new Bishop();
@@ -34,14 +34,15 @@ public class Chessboard {
      * Отображение доски (псевдографика или иной способ)
      */
     public void displayBoard(){
+        Pawn pawn = new Pawn() ;
         String[] mainPiecesWhite = {rook.getSymbol(), knight.getSymbol(), bishop.getSymbol(), queen.getSymbol(),king.getSymbol(),rook.getSymbol(), knight.getSymbol(), bishop.getSymbol()};
         String[] mainPiecesBlack = {rook.getSymbol(), knight.getSymbol(), bishop.getSymbol(), king.getSymbol(),queen.getSymbol(),rook.getSymbol(), knight.getSymbol(), bishop.getSymbol()};
         for(int i=0;i<8;i++) {
             System.out.print(i + 1);
             for (int j = 0; j < 8; j++) {
-                cords[i][j] = j;
                 if (i == 1 || i == 6) {
                     System.out.print("\t" + pawn.getSymbol());
+                    pawn = new Pawn(i,j);
                 }
                 else if(i==0){
                     System.out.print("\t" + mainPiecesWhite[j]);
@@ -59,6 +60,8 @@ public class Chessboard {
         for(int i=97;i<105;i++){
             System.out.print("\t"+(char)i);
         }
+        for(int i=0;i<8;i++){
+        System.out.println("X is: "+ pawn.getX() +" Y is: "+pawn.getY());
+        }
     }
-
 }
