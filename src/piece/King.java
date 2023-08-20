@@ -9,6 +9,6 @@ public class King implements Piece {
 
     @Override
     public String getSymbol() {
-        return null;
+        return "K";
     }
 }

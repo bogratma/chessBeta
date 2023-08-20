@@ -8,6 +8,6 @@ public class Knight implements Piece{
 
     @Override
     public String getSymbol() {
-        return null;
+        return "N";
     }
 }

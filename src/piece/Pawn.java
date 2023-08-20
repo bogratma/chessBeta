@@ -9,6 +9,6 @@ public class Pawn implements Piece{
 
     @Override
     public String getSymbol() {
-        return null;
+        return "P";
     }
 }

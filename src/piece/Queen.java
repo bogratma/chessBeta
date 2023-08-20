@@ -9,6 +9,6 @@ public class Queen implements Piece{
 
     @Override
     public String getSymbol() {
-        return "Queen";
+        return "Q";
     }
 }

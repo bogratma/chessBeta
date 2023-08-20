@@ -8,6 +8,6 @@ public class Rook implements Piece{
 
     @Override
     public String getSymbol() {
-        return null;
+        return "R";
     }
 }

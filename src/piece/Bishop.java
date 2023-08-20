@@ -8,6 +8,6 @@ public class Bishop implements Piece{
 
     @Override
     public String getSymbol() {
-        return null;
+        return "B";
     }
 }
