@@ -2,6 +2,8 @@ package chessboard;
 
 import piece.*;
 
+import javax.xml.transform.Source;
+
 public class Chessboard {
     private Piece[][] board;
     private Pawn pawn = new Pawn();
@@ -10,6 +12,7 @@ public class Chessboard {
     private Bishop bishop = new Bishop();
     private Queen queen = new Queen();
     private  Rook rook = new Rook();
+    int[][] cords;
     public Chessboard() {
     }
 
@@ -21,7 +24,9 @@ public class Chessboard {
      * @param destinationX конечная позиция по оси X
      * @param destinationY конечная позиция по оси Y
      */
-    public void movePiece(int sourceX, int sourceY, int destinationX, int destinationY){
+    public void movePiece(char sourceX, int sourceY, char destinationX, int destinationY){
+        int sourceMoveIntegerX = (int) sourceX - 97;
+        int destinationMoveIntegerX = (int) destinationX - 97;
 
     }
 
@@ -34,6 +39,7 @@ public class Chessboard {
         for(int i=0;i<8;i++) {
             System.out.print(i + 1);
             for (int j = 0; j < 8; j++) {
+                cords[i][j] = j;
                 if (i == 1 || i == 6) {
                     System.out.print("\t" + pawn.getSymbol());
                 }
@@ -54,4 +60,5 @@ public class Chessboard {
             System.out.print("\t"+(char)i);
         }
     }
+
 }
