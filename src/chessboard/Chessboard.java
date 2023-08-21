@@ -1,8 +1,11 @@
 package chessboard;
 
 import piece.*;
+import player.Player;
 
 import javax.xml.transform.Source;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Chessboard {
     private Piece[][] board;
@@ -24,9 +27,13 @@ public class Chessboard {
      * @param destinationX конечная позиция по оси X
      * @param destinationY конечная позиция по оси Y
      */
-    public void movePiece(char sourceX, int sourceY, char destinationX, int destinationY){
+    public void movePiece(char sourceX, int sourceY, char destinationX, int destinationY, Pawn p ){
         int sourceMoveIntegerX = (int) sourceX - 97;
         int destinationMoveIntegerX = (int) destinationX - 97;
+        int pawnCordsX = p.getX();
+        int pawnCordsY = p.getY();
+        p.setX(destinationMoveIntegerX);
+        p.setY(destinationY);
 
     }
 
@@ -34,15 +41,17 @@ public class Chessboard {
      * Отображение доски (псевдографика или иной способ)
      */
     public void displayBoard(){
-        Pawn pawn = new Pawn() ;
-        String[] mainPiecesWhite = {rook.getSymbol(), knight.getSymbol(), bishop.getSymbol(), queen.getSymbol(),king.getSymbol(),rook.getSymbol(), knight.getSymbol(), bishop.getSymbol()};
-        String[] mainPiecesBlack = {rook.getSymbol(), knight.getSymbol(), bishop.getSymbol(), king.getSymbol(),queen.getSymbol(),rook.getSymbol(), knight.getSymbol(), bishop.getSymbol()};
+        Player pl = new Player("Vlad","White");
+        ArrayList<Pawn> pawn =new ArrayList<Pawn>() ;
+        String[] mainPiecesWhite = {rook.getSymbol(), knight.getSymbol(), bishop.getSymbol(), queen.getSymbol(),king.getSymbol(),bishop.getSymbol(), knight.getSymbol(), rook.getSymbol()};
+        String[] mainPiecesBlack = {rook.getSymbol(), knight.getSymbol(), bishop.getSymbol(), queen.getSymbol(),king.getSymbol(),bishop.getSymbol(), knight.getSymbol(), rook.getSymbol()};
         for(int i=0;i<8;i++) {
             System.out.print(i + 1);
             for (int j = 0; j < 8; j++) {
                 if (i == 1 || i == 6) {
-                    System.out.print("\t" + pawn.getSymbol());
-                    pawn = new Pawn(i,j);
+                    pawn.add(new Pawn(i,j,pl));
+                    System.out.print("\t" + pawn.get(i-1).getSymbol());
+
                 }
                 else if(i==0){
                     System.out.print("\t" + mainPiecesWhite[j]);
@@ -59,9 +68,7 @@ public class Chessboard {
         System.out.println();
         for(int i=97;i<105;i++){
             System.out.print("\t"+(char)i);
-        }
-        for(int i=0;i<8;i++){
-        System.out.println("X is: "+ pawn.getX() +" Y is: "+pawn.getY());
-        }
+        }System.out.println();
+        //movePiece();
     }
 }
