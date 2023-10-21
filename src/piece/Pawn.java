@@ -31,8 +31,18 @@ public class Pawn implements Piece{
         this.y = y;
     }
 
+    public void checkinfo (){
+        System.out.println("По Горизонтали "+getX()+" По Вертикали "+ getY()+" Игрок "+pl.getColor());
+    }
+
+    public String getPl() {
+        return pl.getColor();
+    }
+
     @Override
     public boolean isValidMove(int sourceX, int sourceY, int destinationX, int destinationY) {
+        if(Math.abs(destinationX-sourceX) ==1 && Math.abs(destinationY-sourceY)==0)
+            return true;
         return false;
     }
 

@@ -11,6 +11,9 @@ public class Player {
         this.color = color;
     }
 
+    public String getColor() {
+        return color;
+    }
 
     /**
      * @param board шахматная доска
